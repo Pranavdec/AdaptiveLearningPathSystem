@@ -2,7 +2,7 @@ package org.app;
 
 class PreferencesSummaryRequest extends OpenAIRequest {
     @Override
-    public String buildPrompt(UserInput userInput) {
+    public void buildPrompt(UserInput userInput) {
         String preferences = userInput.getTextArea();
         // Split the text into individual lines
         String[] lines = preferences.split("\\n");
@@ -18,6 +18,5 @@ class PreferencesSummaryRequest extends OpenAIRequest {
 
         prompt = promptBuilder.toString();
 
-        return prompt;
     }
 }
