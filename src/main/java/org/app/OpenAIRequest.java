@@ -16,7 +16,7 @@ public abstract class OpenAIRequest {
 
     protected String prompt;
 
-    public abstract String buildPrompt(UserInput userInput);
+    public abstract void buildPrompt(UserInput userInput);
 
     // Sends a request to the OpenAI API
     public String sendRequest() throws IOException {
