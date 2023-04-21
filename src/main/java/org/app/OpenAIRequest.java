@@ -10,7 +10,7 @@ import okhttp3.Response;
 public abstract class OpenAIRequest {
 
     // API key and URL
-    protected static final String API_KEY = "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";
+    protected static final String API_KEY = "<Open Ai key>";
     protected static final String API_URL = "https://api.openai.com/v1/chat/completions";
     protected static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
