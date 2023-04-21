@@ -77,8 +77,4 @@ class UserManager {
         return null;
     }
 
-    // Getter for the users HashMap
-    public HashMap<String, User> getUsers() {
-        return users;
-    }
 }

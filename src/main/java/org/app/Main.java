@@ -1,9 +1,5 @@
 package org.app;
 
-//Name: Pallerla Pranav
-//Roll no: 21MCME22
-// Java Mini Project Adaptive Learning System
-
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -39,7 +35,7 @@ public class Main {
 
     // Method to show the login screen
     public static void showLoginScreen() {
-        LoginScreen loginScreen = new LoginScreen(frame, userManager, (user, learningPaths) -> startUserInterface(user, learningPaths, userManager));
+        LoginScreen loginScreen = new LoginScreen(frame, userManager, (user, learningPaths) -> startUserInterface(user, userManager));
         loginScreen.show();
     }
 
@@ -50,11 +46,11 @@ public class Main {
     }
 
     // Method to start the user interface
-    public static void startUserInterface(User user, Set<String> learningPaths, UserManager userManager) {
+    public static void startUserInterface(User user, UserManager userManager) {
         System.out.println("User data: " + user);
         if (checkInternetConnection()) {
             // If the user has an internet connection, start the program
-            learningPaths = user.getLearningPaths().keySet();
+            Set<String> learningPaths = user.getLearningPaths().keySet();
             System.out.println("Learning paths: " + learningPaths);
             UserInterface userInterface = new UserInterface(user, learningPaths, userManager);
             userInterface.start();

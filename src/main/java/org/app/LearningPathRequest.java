@@ -13,8 +13,7 @@ import static org.app.OpenAIRequest.*;
 public class LearningPathRequest {
     public String sendRequest(String half_prompt) throws IOException {
         // Split the text into individual lines
-        String test = half_prompt;
-        String[] lines = test.split("\\n");
+        String[] lines = half_prompt.split("\\n");
 
         // Build the prompt
         StringBuilder promptBuilder = new StringBuilder("Create a 6 weeks personalised learning path with following information.");
@@ -49,6 +48,7 @@ public class LearningPathRequest {
             if (!response.isSuccessful()) {
                 throw new IOException("Unexpected code " + response);
             }
+            assert response.body() != null;
             return response.body().string();
         }
     }

@@ -2,8 +2,6 @@ package org.app;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Set;
 import java.util.function.BiConsumer;
 
@@ -34,31 +32,23 @@ public class LoginScreen {
         JPasswordField passwordField = new JPasswordField();
 
         JButton loginButton = new JButton("Login");
-        loginButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String username = usernameField.getText();
-                String password = new String(passwordField.getPassword());
-                User user = userManager.loginUser(username, password);
-                if (user != null) {
-                    // Pass the user's learningPaths when creating a new UserInterface instance
-                    onSuccess.accept(user, user.getTopicsWithLearningPaths());
-                    frame.dispose(); // Dispose the login screen JFrame after a successful login
-                } else {
-                    JOptionPane.showMessageDialog(frame, "Invalid username or password.");
-                }
+        loginButton.addActionListener(e -> {
+            String username = usernameField.getText();
+            String password = new String(passwordField.getPassword());
+            User user = userManager.loginUser(username, password);
+            if (user != null) {
+                // Pass the user's learningPaths when creating a new UserInterface instance
+                onSuccess.accept(user, user.getTopicsWithLearningPaths());
+                frame.dispose(); // Dispose the login screen JFrame after a successful login
+            } else {
+                JOptionPane.showMessageDialog(frame, "Invalid username or password.");
             }
         });
 
 
 
         JButton signupButton = new JButton("Sign up");
-        signupButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.showSignupScreen();
-            }
-        });
+        signupButton.addActionListener(e -> Main.showSignupScreen());
 
         frame.add(usernameLabel);
         frame.add(usernameField);

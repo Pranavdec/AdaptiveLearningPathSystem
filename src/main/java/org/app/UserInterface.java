@@ -55,7 +55,7 @@ public class UserInterface {
                 // Send a request to OpenAI to get follow-up questions
                 FollowUpQuestionsRequest followUpQuestionsRequest = new FollowUpQuestionsRequest();
                 topic = selectedTopic;
-                String followUpPrompt = followUpQuestionsRequest.buildPrompt(topicInput);
+                followUpQuestionsRequest.buildPrompt(topicInput);
                 String followUpResponse = followUpQuestionsRequest.sendRequest();
 
                 // Get the follow-up questions from the response
@@ -77,7 +77,7 @@ public class UserInterface {
         try {
             //Send a request to OpenAI to get the user's preferences summary
             PreferencesSummaryRequest preferencesSummaryRequest = new PreferencesSummaryRequest();
-            String preferences = preferencesSummaryRequest.buildPrompt(answersInput);
+            preferencesSummaryRequest.buildPrompt(answersInput);
             String preferencesSummaryResponse = preferencesSummaryRequest.sendRequest();
             System.out.println(preferencesSummaryResponse);
             OpenAIResponse openAIResponse = new OpenAIResponse(preferencesSummaryResponse);

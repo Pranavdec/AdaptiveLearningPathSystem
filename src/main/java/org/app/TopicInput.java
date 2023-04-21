@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.Objects;
 import java.util.Set;
 
 public class TopicInput extends UserInput {
@@ -120,7 +121,7 @@ public class TopicInput extends UserInput {
     @Override
     public String getTextArea(){
         if (dropdown.isVisible()){
-            return dropdown.getSelectedItem().toString();
+            return Objects.requireNonNull(dropdown.getSelectedItem()).toString();
         } else {
             return textArea.getText();
         }
