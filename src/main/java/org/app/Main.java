@@ -17,7 +17,7 @@ public class Main {
         // Create a new user manager and JFrame
         userManager = new UserManager("users.ser");
         frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
 
         showLoginScreen();

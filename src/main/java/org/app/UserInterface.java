@@ -19,7 +19,7 @@ public class UserInterface {
     //Constructor for UserInterface class
     public UserInterface(User user, Set<String> previousLearningPaths, UserManager userManager) {
         frame = new JFrame("Learning Path Generator");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(1000, 800);
 
         topicInput = new TopicInput(previousLearningPaths);
