@@ -12,7 +12,7 @@ public class UserInterfaceNoInternet {
     //Constructor for UserInterfaceNoInternet class
     public UserInterfaceNoInternet() {
         frame = new JFrame("Learning Path Generator");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(1000, 800);
 
 
